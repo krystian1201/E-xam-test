@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
+
 using System.Web.Mvc;
 
 namespace E_xam_test.Controllers
@@ -20,11 +18,19 @@ namespace E_xam_test.Controllers
             return View();
         }
 
+        public ActionResult Exams()
+        {
+            ViewBag.Message = "Manage or take exams here.";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
         }
+
     }
 }

@@ -1,11 +1,8 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using E_xam_test;
+
 using E_xam_test.Controllers;
 
 namespace E_xam_test.Tests.Controllers
