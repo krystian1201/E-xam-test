@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
 using E_xam_test.Models;
+using E_xam_test.Models.AccountViewModels;
 
 namespace E_xam_test.Controllers
 {
@@ -24,7 +25,8 @@ namespace E_xam_test.Controllers
             UserManager = userManager;
         }
 
-        public ApplicationUserManager UserManager {
+        public ApplicationUserManager UserManager 
+        {
             get
             {
                 return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -59,10 +61,8 @@ namespace E_xam_test.Controllers
                     await SignInAsync(user, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Invalid username or password.");
-                }
+
+                ModelState.AddModelError("", "Invalid username or password.");
             }
 
             // If we got this far, something failed, redisplay form

@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<E_xam_test.Models.Question>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Questions";
 }
 
-<h2>Index</h2>
+<h2>Questions</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,7 +23,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) 
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Time)

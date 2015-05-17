@@ -166,7 +166,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\ExamDBContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,7 +184,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\e-xam-test %282%29.pubxml" />
+    <Content Include="Diagrams\AccountController_Login.sequencediagram" />
+    <Content Include="Diagrams\AccountController_Register.sequencediagram" />
+    <Content Include="Diagrams\QuestionsController_Delete.sequencediagram" />
+    <Content Include="Diagrams\QuestionsController_DeleteConfirmed.sequencediagram" />
+    <Content Include="Diagrams\QuestionsController_Edit.sequencediagram" />
+    <Content Include="Diagrams\E-xam_project_CodeMap.dgml" />
     <None Include="Properties\PublishProfiles\e-xam-test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -225,12 +233,16 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Exams\Index.cshtml" />
     <Content Include="Views\Questions\Create.cshtml" />
     <Content Include="Views\Questions\Delete.cshtml" />
     <Content Include="Views\Questions\Details.cshtml" />
     <Content Include="Views\Questions\Edit.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\Exams\Create.cshtml" />
+    <Content Include="Views\Exams\Delete.cshtml" />
+    <Content Include="Views\Exams\Details.cshtml" />
+    <Content Include="Views\Exams\Edit.cshtml" />
+    <Content Include="Views\Exams\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

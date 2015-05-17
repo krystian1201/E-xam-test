@@ -42,6 +42,7 @@ namespace E_xam_test.Controllers
             return View();
         }
 
+
         // POST: Questions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -87,6 +88,7 @@ namespace E_xam_test.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(question);
         }
 
@@ -97,11 +99,13 @@ namespace E_xam_test.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
             }
+
             return View(question);
         }
 
@@ -122,6 +126,7 @@ namespace E_xam_test.Controllers
             {
                 db.Dispose();
             }
+
             base.Dispose(disposing);
         }
     }

@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E-xam-test\E-xam-test.csproj">
+    <ProjectReference Include="..\E-xam-test\E-xam.csproj">
       <Project>{464a9b72-67fa-4ffa-a254-8b86851cdde2}</Project>
-      <Name>E-xam-test</Name>
+      <Name>E-xam</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

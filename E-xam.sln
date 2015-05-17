@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-xam-test", "E-xam-test\E-xam-test.csproj", "{464A9B72-67FA-4FFA-A254-8B86851CDDE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-xam", "E-xam-test\E-xam.csproj", "{464A9B72-67FA-4FFA-A254-8B86851CDDE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-xam-test.Tests", "E-xam-test.Tests\E-xam-test.Tests.csproj", "{11ECBF35-567E-40AD-AD55-F3388571048A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-xam.Tests", "E-xam-test.Tests\E-xam.Tests.csproj", "{11ECBF35-567E-40AD-AD55-F3388571048A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
