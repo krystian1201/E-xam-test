@@ -1,7 +1,9 @@
 ﻿
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+
 
 namespace E_xam_test.Models
 {
@@ -9,17 +11,24 @@ namespace E_xam_test.Models
     {
         public int ID { get; set; }
 
+        [Required]
+        public string Name { get; set; }
+
         [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
         [DataType(DataType.Duration)]
         public TimeSpan Duration { get; set; }
 
-        public int MaxPoints
-        {
-            get { return 10; }
-        }
+        //public string Place { get; set; }
 
-        public List<Question> Questions { get; set; }
+        //public string SomeString { get; set; }
+
+        //public int MaxPoints
+        //{
+        //    get { return 10; }
+        //}
+
+        public virtual List<Question> Questions { get; set; }
     }
 }

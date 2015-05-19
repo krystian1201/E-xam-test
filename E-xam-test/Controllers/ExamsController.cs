@@ -3,14 +3,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-
 using E_xam_test.Models;
 
 namespace E_xam_test.Controllers
 {
     public class ExamsController : Controller
     {
-        private ExamDBContext db = new ExamDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Exams
         public ActionResult Index()
@@ -44,7 +43,7 @@ namespace E_xam_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Date,Duration")] Exam exam)
+        public ActionResult Create([Bind(Include = "ID,Name,Date,Duration")] Exam exam)
         {
             if (ModelState.IsValid)
             {
@@ -63,14 +62,11 @@ namespace E_xam_test.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Exam exam = db.Exams.Find(id);
-
             if (exam == null)
             {
                 return HttpNotFound();
             }
-
             return View(exam);
         }
 
@@ -79,7 +75,7 @@ namespace E_xam_test.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Date,Duration")] Exam exam)
+        public ActionResult Edit([Bind(Include = "ID,Name,Date,Duration")] Exam exam)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +83,6 @@ namespace E_xam_test.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(exam);
         }
 

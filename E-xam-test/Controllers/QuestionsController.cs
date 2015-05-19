@@ -1,17 +1,18 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-
 using E_xam_test.Models;
-
 
 namespace E_xam_test.Controllers
 {
     public class QuestionsController : Controller
     {
-        private QuestionDBContext db = new QuestionDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Questions
         public ActionResult Index()
@@ -26,13 +27,11 @@ namespace E_xam_test.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
             }
-
             return View(question);
         }
 
@@ -41,7 +40,6 @@ namespace E_xam_test.Controllers
         {
             return View();
         }
-
 
         // POST: Questions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -88,7 +86,6 @@ namespace E_xam_test.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(question);
         }
 
@@ -99,13 +96,11 @@ namespace E_xam_test.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
             }
-
             return View(question);
         }
 
@@ -126,7 +121,6 @@ namespace E_xam_test.Controllers
             {
                 db.Dispose();
             }
-
             base.Dispose(disposing);
         }
     }

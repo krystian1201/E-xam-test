@@ -165,13 +165,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505170723462_InitialCreate.cs" />
+    <Compile Include="Migrations\201505170723462_InitialCreate.Designer.cs">
+      <DependentUpon>201505170723462_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191733133_AddExamQuestionModels.cs" />
+    <Compile Include="Migrations\201505191733133_AddExamQuestionModels.Designer.cs">
+      <DependentUpon>201505191733133_AddExamQuestionModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191743106_ExamNameRequired.cs" />
+    <Compile Include="Migrations\201505191743106_ExamNameRequired.Designer.cs">
+      <DependentUpon>201505191743106_ExamNameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191801401_AddAnswersList.cs" />
+    <Compile Include="Migrations\201505191801401_AddAnswersList.Designer.cs">
+      <DependentUpon>201505191801401_AddAnswersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191803393_RemoveMaxPoints.cs" />
+    <Compile Include="Migrations\201505191803393_RemoveMaxPoints.Designer.cs">
+      <DependentUpon>201505191803393_RemoveMaxPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191804503_RemoveDuration.cs" />
+    <Compile Include="Migrations\201505191804503_RemoveDuration.Designer.cs">
+      <DependentUpon>201505191804503_RemoveDuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505191806178_AddExamDuration.cs" />
+    <Compile Include="Migrations\201505191806178_AddExamDuration.Designer.cs">
+      <DependentUpon>201505191806178_AddExamDuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Exam.cs" />
-    <Compile Include="Models\ExamDBContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\QuestionDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -190,6 +217,7 @@
     <Content Include="Diagrams\QuestionsController_DeleteConfirmed.sequencediagram" />
     <Content Include="Diagrams\QuestionsController_Edit.sequencediagram" />
     <Content Include="Diagrams\E-xam_project_CodeMap.dgml" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\e-xam-test.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -251,8 +279,33 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505170723462_InitialCreate.resx">
+      <DependentUpon>201505170723462_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191733133_AddExamQuestionModels.resx">
+      <DependentUpon>201505191733133_AddExamQuestionModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191743106_ExamNameRequired.resx">
+      <DependentUpon>201505191743106_ExamNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191801401_AddAnswersList.resx">
+      <DependentUpon>201505191801401_AddAnswersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191803393_RemoveMaxPoints.resx">
+      <DependentUpon>201505191803393_RemoveMaxPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191804503_RemoveDuration.resx">
+      <DependentUpon>201505191804503_RemoveDuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505191806178_AddExamDuration.resx">
+      <DependentUpon>201505191806178_AddExamDuration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
