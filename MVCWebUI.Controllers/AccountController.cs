@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
 using E_xam_test.Models;
-using E_xam_test.Models.AccountViewModels;
+using E_xam_test.Models;
 
 namespace E_xam_test.Controllers
 {

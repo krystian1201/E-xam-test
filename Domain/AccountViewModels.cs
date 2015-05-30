@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace E_xam_test.Models.AccountViewModels
+namespace E_xam_test.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

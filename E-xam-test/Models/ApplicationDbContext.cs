@@ -1,7 +1,9 @@
 ﻿
 using System.Data.Entity;
-using E_xam_test.Migrations;
 using Microsoft.AspNet.Identity.EntityFramework;
+
+using E_xam_test.Migrations;
+
 
 namespace E_xam_test.Models
 {
@@ -22,6 +24,8 @@ namespace E_xam_test.Models
 
         public DbSet<Exam> Exams { get; set; }
         public DbSet<Question> Questions { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
     }
     
 }

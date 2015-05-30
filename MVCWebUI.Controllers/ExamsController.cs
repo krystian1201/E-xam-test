@@ -6,111 +6,114 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+
 using E_xam_test.Models;
 
 namespace E_xam_test.Controllers
 {
-    public class QuestionsController : Controller
+    public class ExamsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Questions
+        // GET: Exams
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            return View(db.Questions.ToList());
+            return View(db.Exams.ToList());
         }
 
-        // GET: Questions/Details/5
+        // GET: Exams/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            Exam exam = db.Exams.Find(id);
+            if (exam == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(exam);
         }
 
-        // GET: Questions/Create
+        // GET: Exams/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Questions/Create
+        // POST: Exams/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Time,Text,Points")] Question question)
+        //[Bind(Include = "ID,Name,Date,Duration")]
+        public ActionResult Create( Exam exam)
         {
             if (ModelState.IsValid)
             {
-                db.Questions.Add(question);
+                db.Exams.Add(exam);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(question);
+            return View(exam);
         }
 
-        // GET: Questions/Edit/5
+        // GET: Exams/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            Exam exam = db.Exams.Find(id);
+            if (exam == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(exam);
         }
 
-        // POST: Questions/Edit/5
+        // POST: Exams/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Time,Text,Points")] Question question)
+        public ActionResult Edit([Bind(Include = "ID,Name,Date,Duration")] Exam exam)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(question).State = EntityState.Modified;
+                db.Entry(exam).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(question);
+            return View(exam);
         }
 
-        // GET: Questions/Delete/5
+        // GET: Exams/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            Exam exam = db.Exams.Find(id);
+            if (exam == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(exam);
         }
 
-        // POST: Questions/Delete/5
+        // POST: Exams/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Question question = db.Questions.Find(id);
-            db.Questions.Remove(question);
+            Exam exam = db.Exams.Find(id);
+            db.Exams.Remove(exam);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

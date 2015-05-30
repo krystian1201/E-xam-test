@@ -20,7 +20,7 @@ namespace E_xam_test.Models
         [DataType(DataType.Duration)]
         public TimeSpan Duration { get; set; }
 
-        //public string Place { get; set; }
+        public string Place { get; set; }
 
         //public string SomeString { get; set; }
 
@@ -30,5 +30,8 @@ namespace E_xam_test.Models
         //}
 
         public virtual List<Question> Questions { get; set; }
+
+        //public int CourseID { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

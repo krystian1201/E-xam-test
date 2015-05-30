@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E-xam-test\E-xam.csproj">
+    <ProjectReference Include="..\E-xam-test\E-xam.MVCWebUI.csproj">
       <Project>{464a9b72-67fa-4ffa-a254-8b86851cdde2}</Project>
-      <Name>E-xam</Name>
+      <Name>E-xam.MVCWebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

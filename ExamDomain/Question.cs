@@ -11,7 +11,7 @@ namespace E_xam_test.Models
     {
         public int ID { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Duration)]
         [Display(Name = "Time to respond")]
         public TimeSpan Time { get; set; }
 
@@ -21,6 +21,7 @@ namespace E_xam_test.Models
 
         public int Points { get; set; }
 
+        //public int ExamID { get; set; }
         public virtual Exam Exam { get; set; }
 
         public List<string> Answers { get; set; }
